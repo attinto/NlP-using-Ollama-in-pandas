@@ -17,13 +17,8 @@ It can be used for any dataset that requieres having the information
 
 ## Main Files
 
-<<<<<<< HEAD
 - `ollama_simple_nlp.py`: Main script 
 - `reviews_Musical_Instruments_sample.csv`: Sample Amazon reviews for musical instruments.
-=======
-- `ollama_simple_nlp.py`: Main script that loads data, runs the LLM extraction, and processes results.
-- `reviews_Musical_Instruments_sample.csv`: CSV file containing Amazon reviews for musical instruments.
->>>>>>> 69112f6c59aa14b83d408e22f539fc85dfd9b9d0
 
 ## Setup Instructions
 
@@ -81,19 +76,8 @@ uv run ollama_simple_nlp.py
 
 ## Troubleshooting & Tips
 
-<<<<<<< HEAD
 - **Ollama "App" vs Terminal:**
   - The script expects Ollama to be running as a background service (not just in a terminal window). If you encounter connection issues, ensure the Ollama app is running and accessible at `http://localhost:11434/v1`.
-=======
-- **Ollama App vs Terminal:**
-  - The script expects Ollama to be running as a background service (not just in a terminal window). If you encounter connection issues, ensure the Ollama app is running and accessible at `http://localhost:11434/v1`.
-- **Model Compatibility:**
-  - Some models may not support structured outputs or may behave inconsistently. If you encounter issues, try updating Ollama or switching to a different model (e.g., Meta Llama).
-- **API Key:**
-  - The script uses `api_key="ollama"` as a placeholder. No real OpenAI key is needed for local Ollama usage.
-- **Performance:**
-  - LLM inference can be slow, especially on large models or limited hardware. The script prints the time taken for each request.
->>>>>>> 69112f6c59aa14b83d408e22f539fc85dfd9b9d0
 
 ## Example Output
 
