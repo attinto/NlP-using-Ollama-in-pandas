@@ -1,3 +1,4 @@
+#%%
 import pandas as pd
 from openai import OpenAI
 from pydantic import BaseModel, Field
@@ -16,8 +17,13 @@ df_raw = pd.read_csv('reviews_Musical_Instruments_sample.csv')
 pd.set_option('display.max_colwidth', None)
 pd.set_option('display.max_rows', None)
 
+
+# %%
+
 # df_raw = df_raw[['reviewerID','reviewText','overall']]
 df_raw['overall'].value_counts()
+
+# Short reviews
 df_raw[df_raw['overall']=='1']
  
 df_raw1 = df_raw[df_raw['overall']==1].sample(1)
@@ -68,7 +74,6 @@ Also, you can use another LLM that accept structured outputs like Meta Llama
 """
 
 def extract_review(review: str) -> ExtractReview:
-
     start_time = time.time()
     resp = client.chat.completions.create(
         model="gemma3:12b",
@@ -109,5 +114,12 @@ df['length'] = df['llm_result'].apply(lambda x: x.review_length).str.split('.').
 
 df.drop(axis = 1, inplace = True, columns = ['llm_result','reviewerID'])
 
+
+#%%
+
 df
 
+#%%
+
+
+df[['reviewText','overall','sentiment','score','instrument']]# %%
