@@ -54,6 +54,12 @@ class ExtractReview(BaseModel):
     instrument: str
     review_length: review_length
 
+
+
+
+
+
+
 client = instructor.from_openai(
     OpenAI(
         base_url="http://localhost:11434/v1",
@@ -80,10 +86,12 @@ def extract_review(review: str) -> ExtractReview:
         messages=[
             {
                 "role": "system",
-                "content": """Clasify the product and extract the information given an Amazon review.
+                "content": """Clasify the product and extract 
+                the information given an Amazon review.
                 The sentiment can be positive, negative or neutral.
                 The score is an integer between 1 and 5.
-                The instrument is a string if you cannot find an instrument return the item of review.
+                The instrument is a string if you cannot find an instrument 
+                return the item of review.
                 """
             },
             {
@@ -92,9 +100,31 @@ def extract_review(review: str) -> ExtractReview:
             }
         ],
         response_model=ExtractReview,
-        
     )
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     elapsed_time = time.time() - start_time
+    
+    
+    
+    
+    
+    
+    
+    
+    
     print(f"Ollama request took {elapsed_time:.2f} seconds")
     print('Ollama response: ', resp.model_dump_json())
     print('Sentiment: ', resp.sentiment)
